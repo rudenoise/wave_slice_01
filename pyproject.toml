@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "wave-slice-01"
+version = "0.0.1"
+description = "a python project that takes a wav file and slices it up in to individual cycles/periods"
+authors = ["rudenoise <joel@hughesindustries.uk>"]
+readme = "README.md"
+packages = [{include = "wave_slice_01"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+librosa = "^0.10.0.post2"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.0.272"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
