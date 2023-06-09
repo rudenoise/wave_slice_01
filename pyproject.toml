@@ -9,6 +9,7 @@ packages = [{include = "wave_slice_01"}]
 [tool.poetry.dependencies]
 python = "^3.11"
 librosa = "^0.10.0.post2"
+soundfile = "^0.12.1"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.0.272"
