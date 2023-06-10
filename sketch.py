@@ -34,11 +34,8 @@ def norm(half_periods):
 
 
 def max_len(hps):
-    maximum = 0
-    for hp in hps:
-        if maximum <= len(hp):
-            maximum = len(hp)
-    return maximum
+    all = [len(hp) for hp in hps]
+    return sum(all) / len(all)
 
 
 def regularise(half_periods):
@@ -75,7 +72,7 @@ def separate_at_zero_crossings(file_name, sample_rate):
 
 
 sample_rate = 48000
-file_name = "p2-kick"
+file_name = "edward"
 
 print("hello testing...")
 
@@ -84,6 +81,7 @@ fresh_setup()
 half_periods = separate_at_zero_crossings(file_name, sample_rate)
 
 half_periods_normalised = norm(half_periods)
+
 write_file(f"{file_name}_normalised", half_periods_normalised, sample_rate)
 
 print(f"{np.concatenate(half_periods).shape=}")
@@ -92,3 +90,5 @@ print(f"{np.concatenate(half_periods_normalised).shape=}")
 half_periods_regularised = regularise(half_periods)
 
 write_file(f"{file_name}_regularised", half_periods_regularised, sample_rate)
+
+write_file(f"{file_name}_reg_n_norm", norm(half_periods_regularised), sample_rate)
