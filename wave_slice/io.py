@@ -1,7 +1,14 @@
 import os
 import shutil
-import soundfile as sf
+
+import librosa
 import numpy as np
+import soundfile as sf
+
+
+def read_to_rosa(file_name, sample_rate):
+    y, _ = librosa.load(f"./in/{file_name}.wav", sr=sample_rate)
+    return y
 
 
 def fresh_setup():

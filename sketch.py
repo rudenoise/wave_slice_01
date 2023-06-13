@@ -1,6 +1,5 @@
-from wave_slice.io import fresh_setup, write_file
-from wave_slice.proc import separate_at_zero_crossings, norm, regularise
-
+from wave_slice.io import fresh_setup, read_to_rosa, write_file
+from wave_slice.proc import norm, regularise, separate_at_zero_crossings
 
 sample_rate = 48000
 file_name = "edward"
@@ -9,7 +8,9 @@ print("hello testing...")
 
 fresh_setup()
 
-half_periods = separate_at_zero_crossings(file_name, sample_rate)
+input_file = read_to_rosa(file_name, sample_rate)
+
+half_periods = separate_at_zero_crossings(input_file)
 
 half_periods_normalised = norm(half_periods)
 

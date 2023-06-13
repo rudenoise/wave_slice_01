@@ -36,12 +36,11 @@ def regularise(half_periods):
     return half_periods_regularised
 
 
-def separate_at_zero_crossings(file_name, sample_rate):
-    y, _ = librosa.load(f"{file_name}.wav", sr=sample_rate)
+def separate_at_zero_crossings(input_file):
 
-    zero_crossings = librosa.zero_crossings(y)
+    zero_crossings = librosa.zero_crossings(input_file)
 
     print(f"total zero crossings: {zero_crossings.sum()}")
 
-    half_periods = np.split(y, zero_crossings.nonzero()[0])
+    half_periods = np.split(input_file, zero_crossings.nonzero()[0])
     return half_periods
