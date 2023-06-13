@@ -4,7 +4,6 @@ from wave_slice.proc import separate_at_zero_crossings, norm, regularise
 
 sample_rate = 48000
 file_name = "edward"
-file_name = "Police04_Tape1_PL"
 
 print("hello testing...")
 
