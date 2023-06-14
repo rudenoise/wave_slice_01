@@ -17,6 +17,13 @@ poetry install
 poetry run sketch.py
 ```
 
+The `requirements.txt` is generated from poetry and used in to build the docker
+container.
+
+```sh
+poetry export -f requirements.txt --output requirements.txt
+```
+
 A basic library lives in `wave_slice/`
 
 ## Notebook
