@@ -3,9 +3,13 @@ from wave_slice.proc import norm, regularise, separate_at_zero_crossings
 
 sample_rate = 48000
 
+wav_files_dir_path = "./wav_files"
 # name the files
 bass_file = "2020-06-12-BG"
-sub_file = "2020-06-12-SerumSUB.wav"
+sub_file = "2020-06-12-SerumSUB"
+
+bass_file = f"{wav_files_dir_path}/in/{bass_file}.wav"
+sub_file = f"{wav_files_dir_path}/in/{sub_file}.wav"
 
 # load them using librosa
 bass_file = read_to_rosa(bass_file, sample_rate)
